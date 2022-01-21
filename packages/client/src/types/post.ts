@@ -1,7 +1,7 @@
 export interface Post {
   _createdAt: string;
   _id: string;
-  author: AssetOrAuthor;
+  author: { name: string; slug: string; image: MainImage };
   body?: BodyEntity[] | null;
   description: string;
   mainImage: MainImage;

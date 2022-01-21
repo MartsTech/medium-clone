@@ -9,7 +9,6 @@ interface HomePageProps {
 }
 
 const HomePage: NextPage<HomePageProps> = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       <Head>
