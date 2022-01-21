@@ -10,7 +10,7 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ posts }) => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <main className="max-w-7xl mx-auto">
       <Header />
       <Banner />
       <div
@@ -21,7 +21,7 @@ const Home: FC<HomeProps> = ({ posts }) => {
           <HomePost key={post["_id"]} post={post} />
         ))}
       </div>
-    </div>
+    </main>
   );
 };
 

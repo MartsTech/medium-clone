@@ -1,16 +1,29 @@
 export interface Post {
   _createdAt: string;
   _id: string;
-  author: { name: string; slug: string; image: MainImage };
+  author: Author;
   body?: BodyEntity[] | null;
   description: string;
-  mainImage: MainImage;
+  mainImage: ImageOrMainImage;
   slug: Slug;
   title: string;
 }
-export interface AssetOrAuthor {
+export interface Author {
+  image: ImageOrMainImage;
+  name: string;
+  slug: Slug;
+}
+export interface ImageOrMainImage {
+  _type: string;
+  asset: Asset;
+}
+export interface Asset {
   _ref: string;
   _type: string;
+}
+export interface Slug {
+  _type: string;
+  current: string;
 }
 export interface BodyEntity {
   _key: string;
@@ -18,7 +31,7 @@ export interface BodyEntity {
   children?: ChildrenEntity[] | null;
   markDefs?: null[] | null;
   style?: string | null;
-  asset?: AssetOrAuthor | null;
+  asset?: Asset | null;
   crop?: Crop | null;
   hotspot?: Hotspot | null;
 }
@@ -41,12 +54,4 @@ export interface Hotspot {
   width: number;
   x: number;
   y: number;
-}
-export interface MainImage {
-  _type: string;
-  asset: AssetOrAuthor;
-}
-export interface Slug {
-  _type: string;
-  current: string;
 }

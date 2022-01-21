@@ -1,7 +1,7 @@
 import Home from "modules/home";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import { Post } from "types/post";
+import type { Post } from "types/post";
 import { sanityClient } from "utils/sanity";
 
 interface HomePageProps {
