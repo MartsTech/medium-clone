@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "867b4e5c-d0f8-47d1-81e5-b963353e2f70",
+    "author": { "image": [Object], name: 'Martin Velkov' },
+    description: 'This is the first ever post on this build!',
+    mainImage: { _type: 'image', asset: [Object] },
+    slug: { _type: 'slug', current: 'my-first-post' },
+    title: 'My First POST'
+  }
+]
