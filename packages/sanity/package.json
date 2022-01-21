@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Martin Velkov <martin.e.velkov@gmail.com>",
+  "author": "Martin Velkov",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
