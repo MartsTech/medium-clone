@@ -1,0 +1,14 @@
+{
+  "name": "Medium Clone",
+  "short_name": "Medium Clone",
+  "icons": [
+    {
+      "src": "/favicons/icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "https://medium-clone-martstech.vercel.app"
+}
