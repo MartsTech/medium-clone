@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import type { Post } from "types/post";
 
@@ -11,9 +11,10 @@ interface IFormInput {
 
 interface PostFormProps {
   post: Post;
+  setSubmitted: (state: boolean) => void;
 }
 
-const PostForm: FC<PostFormProps> = ({ post }) => {
+const PostForm: FC<PostFormProps> = ({ post, setSubmitted }) => {
   const {
     register,
     handleSubmit,
@@ -26,10 +27,11 @@ const PostForm: FC<PostFormProps> = ({ post }) => {
       body: JSON.stringify(data),
     })
       .then(() => {
-        console.log(data);
+        setSubmitted(true);
       })
       .catch((error) => {
         console.error(error);
+        setSubmitted(false);
       });
   };
 

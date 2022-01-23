@@ -16,7 +16,10 @@ const createComment = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await client.create({
       _type: "comment",
-      post: { _type: "reference", ref: _id },
+      post: {
+        _type: "reference",
+        _ref: _id,
+      },
       name,
       email,
       comment,

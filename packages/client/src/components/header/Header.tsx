@@ -6,14 +6,16 @@ const Header = () => {
     <header className="flex justify-between p-5 max-w-7xl mx-auto">
       <div className="flex items-center space-x-5">
         <Link href="/" passHref>
-          <Image
-            src="/images/logo.png"
-            alt="logo"
-            className="object-contain cursor-pointer"
-            width={180}
-            height={50}
-            objectFit="contain"
-          />
+          <>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              className="object-contain cursor-pointer"
+              width={180}
+              height={50}
+              objectFit="contain"
+            />
+          </>
         </Link>
         <div className="hidden md:inline-flex items-center space-x-5">
           <h3>About</h3>

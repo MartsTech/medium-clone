@@ -1,10 +1,11 @@
 import Header from "components/header";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Post } from "types/post";
 import { urlFor } from "utils/sanity";
 import PostAuthor from "./components/PostAuthor";
 import PostBody from "./components/PostBody";
+import PostComment from "./components/PostComment";
 import PostForm from "./components/PostForm";
 
 interface PostProps {
@@ -12,6 +13,8 @@ interface PostProps {
 }
 
 const Post: FC<PostProps> = ({ post }) => {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <main>
       <Header />
@@ -22,6 +25,7 @@ const Post: FC<PostProps> = ({ post }) => {
             alt={post.slug.current}
             layout="fill"
             objectFit="cover"
+            priority={true}
           />
         )}
       </div>
@@ -34,7 +38,32 @@ const Post: FC<PostProps> = ({ post }) => {
         <PostBody post={post} />
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
-      <PostForm post={post} />
+      {!submitted ? (
+        <PostForm
+          post={post}
+          setSubmitted={(state: boolean) => setSubmitted(state)}
+        />
+      ) : (
+        <div
+          className="flex flex-col p-10 my-10 bg-yellow-500 
+          text-white max-w-2xl mx-auto"
+        >
+          <h3 className="text-3xl font-bold">
+            Thank you for submitting your comment!
+          </h3>
+          <p>Once it has been approved, it will apprear below!</p>
+        </div>
+      )}
+      <div
+        className="flex flex-col p-10 my-10 max-w-2xl mx-auto 
+        shadow-yellow-500 shadow space-y-2"
+      >
+        <h3 className="text-4xl">Comments</h3>
+        <hr className="pb-2" />
+        {post.comments.map((comment) => (
+          <PostComment key={comment["_id"]} comment={comment} />
+        ))}
+      </div>
     </main>
   );
 };

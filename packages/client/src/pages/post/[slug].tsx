@@ -9,6 +9,7 @@ interface PostPageProps {
 }
 
 const PostPage: NextPage<PostPageProps> = ({ post }) => {
+  console.log(post);
   return (
     <>
       <Head>

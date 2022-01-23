@@ -3,17 +3,18 @@ export interface Post {
   _id: string;
   author: Author;
   body?: BodyEntity[] | null;
+  comments: Comment[];
   description: string;
-  mainImage: ImageOrMainImage;
+  mainImage: Image;
   slug: Slug;
   title: string;
 }
 export interface Author {
-  image: ImageOrMainImage;
+  image: Image;
   name: string;
   slug: Slug;
 }
-export interface ImageOrMainImage {
+export interface Image {
   _type: string;
   asset: Asset;
 }
@@ -54,4 +55,16 @@ export interface Hotspot {
   width: number;
   x: number;
   y: number;
+}
+export interface Comment {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
+  approved: boolean;
+  comment: string;
+  email: string;
+  name: string;
+  post: Asset;
 }
