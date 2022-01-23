@@ -1,7 +1,7 @@
 import Banner from "components/banner";
 import Header from "components/header";
-import { FC } from "react";
-import { Post } from "types/post";
+import type { FC } from "react";
+import type { Post } from "types/post";
 import HomePost from "./components/HomePost";
 
 interface HomeProps {

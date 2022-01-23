@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import type { FC } from "react";
+import type { SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import type { Post } from "types/post";
 
 interface IFormInput {

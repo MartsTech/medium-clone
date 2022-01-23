@@ -1,7 +1,8 @@
 import Header from "components/header";
 import Image from "next/image";
-import { FC, useState } from "react";
-import { Post } from "types/post";
+import type { FC } from "react";
+import { useState } from "react";
+import type { Post as PostType } from "types/post";
 import { urlFor } from "utils/sanity";
 import PostAuthor from "./components/PostAuthor";
 import PostBody from "./components/PostBody";
@@ -9,7 +10,7 @@ import PostComment from "./components/PostComment";
 import PostForm from "./components/PostForm";
 
 interface PostProps {
-  post: Post;
+  post: PostType;
 }
 
 const Post: FC<PostProps> = ({ post }) => {
